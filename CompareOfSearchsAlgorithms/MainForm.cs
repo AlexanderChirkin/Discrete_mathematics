@@ -22,23 +22,32 @@ namespace CompareOfSearchsAlgorithms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Utils.DataGridViewUtils.InitGridForArr(dataGridViewArray, 30, false, true, false, false, false);
-            dataGridViewArray.ColumnHeadersVisible = true;
+            this.Height = 800;
+            this.Width = 1800;
+            Point p = new Point(0,0);
+            this.Location=p;
 
+            Utils.DataGridViewUtils.InitGridForArr(dataGridViewArray, 30, true, true, false, false, false);
+            dataGridViewArray.ColumnHeadersVisible = true;
+            CreateArray();
         }
 
         private void txtNumberOfItems_TextChanged(object sender, EventArgs e)
         {
-            // так делать нельзя
-            if (txtNumberOfItems.Text != "")
+            CreateArray();
+        }
+        
+        void CreateArray()
+        {
+            int number;
+            if (int.TryParse(txtNumberOfItems.Text, out number))
             {
-                int n = Convert.ToInt32(txtNumberOfItems.Text);
+                int n = number;
                 dataGridViewArray.RowCount = n;
                 Array = new ArrayInt(n);
                 ShowArray();
             }
         }
-
         void ShowArray()
         {
             dataGridViewArray.RowCount = Array.Length;
@@ -48,32 +57,37 @@ namespace CompareOfSearchsAlgorithms
 
         private void btnFillFandom_Click(object sender, EventArgs e)
         {
-            Array.RandomFill(Convert.ToInt32(txtMinValue.Text), Convert.ToInt32(txtMaxValue.Text));
-            ShowArray();
+            int min, max;
+            if (int.TryParse(txtMinValue.Text, out min) && (int.TryParse(txtMaxValue.Text, out max))&&(min<=max))
+            {
+                Array.RandomFill(Convert.ToInt32(txtMinValue.Text), Convert.ToInt32(txtMaxValue.Text));
+                ShowArray();
+            }
         }
 
         private void btnRandomFillWithoutRepeats_Click(object sender, EventArgs e)
         {
-            Array.RandomFillWithoutRepeat(Convert.ToInt32(txtMinValue.Text), Convert.ToInt32(txtMaxValue.Text));
-            ShowArray();
+            int min, max;
+            if (int.TryParse(txtMinValue.Text, out min) && (int.TryParse(txtMaxValue.Text, out max)) && (min <= max))
+            {
+                Array.RandomFillWithoutRepeat(Convert.ToInt32(txtMinValue.Text), Convert.ToInt32(txtMaxValue.Text));
+                ShowArray();
+            }
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (Array != null)
-            {
                 if (rbtnIncremental.Checked)
                 {
                     TestingAlgorithms._search = Search.IncrementalSearch;
                 }
                 else
                     TestingAlgorithms._search = Search.BinarySearch;
-                double res = TestingAlgorithms.TestingSearch(Array.Values);
-                txtAnswer.Text += BuildAnswer(res);
-            }
+                double countOfCompare = TestingAlgorithms.TestingSearch(Array.Values);
+                txtAnswer.Text += BuildAnswer(countOfCompare);
         }
 
-        string BuildAnswer(double res)
+        string BuildAnswer(double countOfCompare)
         {
             StringBuilder answer = new StringBuilder();
             answer.Append('-', 10);
@@ -82,13 +96,16 @@ namespace CompareOfSearchsAlgorithms
             answer.AppendLine();
             answer.AppendFormat(Array.RepeatExist ? "В массиве могут присутствовать повторяющиеся элементы" : "В массиве нет повторяющихся элементов");
             answer.AppendLine();
-            answer.AppendFormat("Клоичество элементов массива: ");
+            answer.AppendFormat("Элемент, который ищется гарантированно присутствует в массиве");
+            answer.AppendLine();
+            answer.AppendFormat("Количество элементов массива: ");
             answer.AppendFormat(txtNumberOfItems.Text);
             answer.AppendLine();
             answer.AppendFormat("Среднее число сравнений: ");
-            answer.AppendFormat(res.ToString());
+            answer.AppendFormat(countOfCompare.ToString());
             answer.AppendLine();
-          //  answer.AppendFormat("Сложность: ");
+            answer.AppendFormat("Сложность: ");
+            answer.AppendFormat((countOfCompare / Convert.ToDouble(txtNumberOfItems.Text)).ToString());
             answer.AppendLine();
             answer.Append('-', 10);
             answer.AppendLine();

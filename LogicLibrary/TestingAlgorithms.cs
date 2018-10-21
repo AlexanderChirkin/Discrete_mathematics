@@ -25,11 +25,8 @@ namespace LogicLibrary
                 TotalCountTest++;
                 TotalCompareCount += countOfCompare;
             }
-
             double MidCountOfCompare = (double)TotalCompareCount / TotalCountTest;
             return MidCountOfCompare;
         }
-
-
     }
 }

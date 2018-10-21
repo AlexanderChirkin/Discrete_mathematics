@@ -28,13 +28,13 @@ namespace LogicLibrary
 
         public void RandomFillWithoutRepeat(int minValue, int maxValue)
         {
-            if (Length > (maxValue - minValue)+1)
+            if (Length > (maxValue - minValue) + 1)
                 return;
             List<int> listValues = new List<int>();
             for (int i = minValue; i <= maxValue; i++)
                 listValues.Add(i);
             int j;
-            for ( int i = 0; i<Length; i++)
+            for (int i = 0; i < Length; i++)
             {
                 j = random.Next(0, listValues.Count);
                 Values[i] = listValues[j];
