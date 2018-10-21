@@ -40,7 +40,7 @@ namespace CompareOfSearchsAlgorithms
         void CreateArray()
         {
             int number;
-            if (int.TryParse(txtNumberOfItems.Text, out number))
+            if (int.TryParse(txtNumberOfItems.Text, out number)&& number>0)
             {
                 int n = number;
                 dataGridViewArray.RowCount = n;
@@ -77,14 +77,15 @@ namespace CompareOfSearchsAlgorithms
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (txtNumberOfItems.Text != "")
+            {
                 if (rbtnIncremental.Checked)
-                {
                     TestingAlgorithms._search = Search.IncrementalSearch;
-                }
                 else
                     TestingAlgorithms._search = Search.BinarySearch;
                 double countOfCompare = TestingAlgorithms.TestingSearch(Array.Values);
                 txtAnswer.Text += BuildAnswer(countOfCompare);
+            }
         }
 
         string BuildAnswer(double countOfCompare)
