@@ -36,7 +36,7 @@ namespace LogicLibrary
                 return -1;
             else
             {
-                while (first < last)
+                while (first <= last)
                 {
                     countOfCmparee++;
                     mid = first + (last - first) / 2;
@@ -44,6 +44,11 @@ namespace LogicLibrary
                         last = mid;
                     else
                         first = mid + 1;
+                    if (first == last)
+                    {
+                        mid = last;
+                        break;
+                    }
                 }
                 if (value == array[mid])
                     return mid;

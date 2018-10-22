@@ -84,11 +84,11 @@ namespace CompareOfSearchsAlgorithms
                 else
                     TestingAlgorithms._search = Search.BinarySearch;
                 double countOfCompare = TestingAlgorithms.TestingSearch(Array.Values);
-                txtAnswer.Text += BuildAnswer(countOfCompare);
+                txtAnswer.Text += BuildAnswerStatistic(countOfCompare);
             }
         }
 
-        string BuildAnswer(double countOfCompare)
+        string BuildAnswerStatistic(double countOfCompare)
         {
             StringBuilder answer = new StringBuilder();
             answer.Append('-', 10);
@@ -116,6 +116,52 @@ namespace CompareOfSearchsAlgorithms
         private void btnClearText_Click(object sender, EventArgs e)
         {
             txtAnswer.Text = "";
+        }
+
+        private void btnStartFindOne_Click(object sender, EventArgs e)
+        {
+            int value;
+            if (int.TryParse(txtItemForSearch.Text, out value))
+            {
+                int countOfCompare, index;
+                if (rbtnIncremental.Checked)
+                    index = Search.IncrementalSearch(Array.Values, value,out countOfCompare);
+                else
+                    index = Search.BinarySearch(Array.Values, value,out countOfCompare);
+
+                txtAnswer.Text += BuildAnswerOneFind(countOfCompare, index);
+            }
+        }
+
+        string BuildAnswerOneFind(int countOfCompare, int index)
+        {
+            StringBuilder answer = new StringBuilder();
+            answer.Append('-', 10);
+            answer.AppendLine();
+            answer.AppendFormat(rbtnBinary.Checked ? "Бинарный поиск" : "Поиск перебором");
+            answer.AppendLine();
+            answer.AppendFormat("Количество элементов массива: ");
+            answer.AppendFormat(txtNumberOfItems.Text);
+            answer.AppendLine();
+            answer.AppendFormat("Элемент для поиска : ");
+            answer.AppendFormat(txtItemForSearch.Text);
+            answer.AppendLine();
+            answer.AppendFormat("Индекс элемента в массиве: ");
+            answer.AppendFormat(index.ToString());
+            answer.AppendLine();
+            answer.AppendFormat("Число сравнений: ");
+            answer.AppendFormat(countOfCompare.ToString());
+            answer.AppendLine();
+            answer.AppendLine();
+            answer.Append('-', 10);
+            answer.AppendLine();
+            return answer.ToString();
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            Array.Sort();
+            ShowArray();
         }
     }
 }

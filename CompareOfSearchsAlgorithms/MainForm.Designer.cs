@@ -50,10 +50,18 @@
             this.btnClearText = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtItemForSearch = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnStartFindOne = new System.Windows.Forms.Button();
+            this.btnSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArray)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewArray
@@ -107,6 +115,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.Controls.Add(this.btnSort);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnRandomFillWithoutRepeats);
             this.panel2.Controls.Add(this.btnFillFandom);
@@ -132,7 +141,7 @@
             // 
             this.btnRandomFillWithoutRepeats.Location = new System.Drawing.Point(248, 194);
             this.btnRandomFillWithoutRepeats.Name = "btnRandomFillWithoutRepeats";
-            this.btnRandomFillWithoutRepeats.Size = new System.Drawing.Size(185, 129);
+            this.btnRandomFillWithoutRepeats.Size = new System.Drawing.Size(185, 89);
             this.btnRandomFillWithoutRepeats.TabIndex = 5;
             this.btnRandomFillWithoutRepeats.Text = "Заполнить случайными числами без повторений";
             this.btnRandomFillWithoutRepeats.UseVisualStyleBackColor = true;
@@ -142,7 +151,7 @@
             // 
             this.btnFillFandom.Location = new System.Drawing.Point(18, 194);
             this.btnFillFandom.Name = "btnFillFandom";
-            this.btnFillFandom.Size = new System.Drawing.Size(184, 129);
+            this.btnFillFandom.Size = new System.Drawing.Size(184, 79);
             this.btnFillFandom.TabIndex = 4;
             this.btnFillFandom.Text = "Заполнить случайными числами";
             this.btnFillFandom.UseVisualStyleBackColor = true;
@@ -185,18 +194,20 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.rbtnBinary);
             this.panel3.Controls.Add(this.rbtnIncremental);
-            this.panel3.Location = new System.Drawing.Point(447, 661);
+            this.panel3.Controls.Add(this.btnStart);
+            this.panel3.Location = new System.Drawing.Point(447, 648);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(221, 147);
+            this.panel3.Size = new System.Drawing.Size(446, 160);
             this.panel3.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 10);
+            this.label4.Location = new System.Drawing.Point(67, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 20);
             this.label4.TabIndex = 2;
@@ -205,7 +216,7 @@
             // rbtnBinary
             // 
             this.rbtnBinary.AutoSize = true;
-            this.rbtnBinary.Location = new System.Drawing.Point(49, 84);
+            this.rbtnBinary.Location = new System.Drawing.Point(71, 110);
             this.rbtnBinary.Name = "rbtnBinary";
             this.rbtnBinary.Size = new System.Drawing.Size(110, 24);
             this.rbtnBinary.TabIndex = 1;
@@ -216,7 +227,7 @@
             // 
             this.rbtnIncremental.AutoSize = true;
             this.rbtnIncremental.Checked = true;
-            this.rbtnIncremental.Location = new System.Drawing.Point(49, 54);
+            this.rbtnIncremental.Location = new System.Drawing.Point(71, 80);
             this.rbtnIncremental.Name = "rbtnIncremental";
             this.rbtnIncremental.Size = new System.Drawing.Size(120, 24);
             this.rbtnIncremental.TabIndex = 0;
@@ -226,9 +237,9 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(713, 661);
+            this.btnStart.Location = new System.Drawing.Point(270, 59);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(180, 147);
+            this.btnStart.Size = new System.Drawing.Size(126, 66);
             this.btnStart.TabIndex = 6;
             this.btnStart.Text = "Старт";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -270,16 +281,82 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Массив";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel4.Controls.Add(this.btnStartFindOne);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.txtItemForSearch);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Location = new System.Drawing.Point(447, 847);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(459, 95);
+            this.panel4.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(23, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(168, 20);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Элемент для поиска";
+            // 
+            // txtItemForSearch
+            // 
+            this.txtItemForSearch.Location = new System.Drawing.Point(197, 48);
+            this.txtItemForSearch.Name = "txtItemForSearch";
+            this.txtItemForSearch.Size = new System.Drawing.Size(70, 26);
+            this.txtItemForSearch.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(164, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Статистика";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(130, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(192, 20);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Поиск одного элемента";
+            // 
+            // btnStartFindOne
+            // 
+            this.btnStartFindOne.Location = new System.Drawing.Point(318, 39);
+            this.btnStartFindOne.Name = "btnStartFindOne";
+            this.btnStartFindOne.Size = new System.Drawing.Size(115, 45);
+            this.btnStartFindOne.TabIndex = 3;
+            this.btnStartFindOne.Text = "Старт";
+            this.btnStartFindOne.UseVisualStyleBackColor = true;
+            this.btnStartFindOne.Click += new System.EventHandler(this.btnStartFindOne_Click);
+            // 
+            // btnSort
+            // 
+            this.btnSort.Location = new System.Drawing.Point(16, 305);
+            this.btnSort.Name = "btnSort";
+            this.btnSort.Size = new System.Drawing.Size(186, 54);
+            this.btnSort.TabIndex = 7;
+            this.btnSort.Text = "Сортировать";
+            this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1847, 978);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnClearText);
             this.Controls.Add(this.txtAnswer);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -295,6 +372,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +402,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnStartFindOne;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtItemForSearch;
+        private System.Windows.Forms.Button btnSort;
     }
 }
 

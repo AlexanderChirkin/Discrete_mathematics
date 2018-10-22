@@ -43,6 +43,11 @@ namespace LogicLibrary
             RepeatExist = false;
         }
 
+        public void Sort()
+        {
+            Array.Sort(Values);
+        }
+
         void Shuffle(int[] array)
         {
             int index1, index2;
