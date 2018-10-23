@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("LogicLibrary")]
+[assembly: AssemblyTitle("SearchesLogic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("LogicLibrary")]
+[assembly: AssemblyProduct("SearchesLogic")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("a3da77ee-9c88-4b02-aa03-0eeed0dd4da9")]
+[assembly: Guid("b6311fe3-3a78-4860-b89c-8688f2e63b23")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

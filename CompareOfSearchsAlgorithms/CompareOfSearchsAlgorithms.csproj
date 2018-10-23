@@ -84,8 +84,8 @@
       <Project>{82de6a2c-491a-4d12-a79c-9d6e4e52cfc6}</Project>
       <Name>GeneralLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LogicLibrary\SearchesLogic.csproj">
-      <Project>{a3da77ee-9c88-4b02-aa03-0eeed0dd4da9}</Project>
+    <ProjectReference Include="..\SearchesLogic\SearchesLogic.csproj">
+      <Project>{b6311fe3-3a78-4860-b89c-8688f2e63b23}</Project>
       <Name>SearchesLogic</Name>
     </ProjectReference>
   </ItemGroup>
