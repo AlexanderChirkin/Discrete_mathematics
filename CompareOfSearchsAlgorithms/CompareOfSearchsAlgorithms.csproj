@@ -80,9 +80,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LogicLibrary\LogicLibrary.csproj">
+    <ProjectReference Include="..\GeneralLogic\GeneralLogic.csproj">
+      <Project>{82de6a2c-491a-4d12-a79c-9d6e4e52cfc6}</Project>
+      <Name>GeneralLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLibrary\SearchesLogic.csproj">
       <Project>{a3da77ee-9c88-4b02-aa03-0eeed0dd4da9}</Project>
-      <Name>LogicLibrary</Name>
+      <Name>SearchesLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

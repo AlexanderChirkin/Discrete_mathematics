@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrayInt.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestingAlgorithms.cs" />
