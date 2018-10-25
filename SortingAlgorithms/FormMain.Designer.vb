@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class FormMain
     Inherits System.Windows.Forms.Form
 
     'Форма переопределяет dispose для очистки списка компонентов.
@@ -23,20 +23,22 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtNumberOfItem = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtMin = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtMax = New System.Windows.Forms.TextBox()
-        Me.btnFillRandom = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btnInsertionSort = New System.Windows.Forms.Button()
-        Me.btnBinaryInsertionSort = New System.Windows.Forms.Button()
         Me.Index = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Item = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtNumberOfItem = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnFillRandom = New System.Windows.Forms.Button()
+        Me.txtMax = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtMin = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnBinaryInsertionSort = New System.Windows.Forms.Button()
+        Me.btnInsertionSort = New System.Windows.Forms.Button()
+        Me.RadioButtonGreater = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonLess = New System.Windows.Forms.RadioButton()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -53,6 +55,16 @@ Partial Class Form1
         Me.DataGridView.Size = New System.Drawing.Size(381, 669)
         Me.DataGridView.TabIndex = 0
         '
+        'Index
+        '
+        Me.Index.HeaderText = "Index"
+        Me.Index.Name = "Index"
+        '
+        'Item
+        '
+        Me.Item.HeaderText = "Item"
+        Me.Item.Name = "Item"
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label1)
@@ -62,14 +74,6 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(655, 104)
         Me.Panel1.TabIndex = 1
         '
-        'txtNumberOfItem
-        '
-        Me.txtNumberOfItem.Location = New System.Drawing.Point(349, 26)
-        Me.txtNumberOfItem.Name = "txtNumberOfItem"
-        Me.txtNumberOfItem.Size = New System.Drawing.Size(58, 26)
-        Me.txtNumberOfItem.TabIndex = 0
-        Me.txtNumberOfItem.Text = "10"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -78,6 +82,14 @@ Partial Class Form1
         Me.Label1.Size = New System.Drawing.Size(268, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Количество элементов в массиве"
+        '
+        'txtNumberOfItem
+        '
+        Me.txtNumberOfItem.Location = New System.Drawing.Point(349, 26)
+        Me.txtNumberOfItem.Name = "txtNumberOfItem"
+        Me.txtNumberOfItem.Size = New System.Drawing.Size(58, 26)
+        Me.txtNumberOfItem.TabIndex = 0
+        Me.txtNumberOfItem.Text = "10"
         '
         'Panel2
         '
@@ -91,22 +103,22 @@ Partial Class Form1
         Me.Panel2.Size = New System.Drawing.Size(661, 205)
         Me.Panel2.TabIndex = 2
         '
-        'Label2
+        'btnFillRandom
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(87, 68)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(133, 20)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Нижняя граница"
+        Me.btnFillRandom.Location = New System.Drawing.Point(399, 65)
+        Me.btnFillRandom.Name = "btnFillRandom"
+        Me.btnFillRandom.Size = New System.Drawing.Size(180, 89)
+        Me.btnFillRandom.TabIndex = 4
+        Me.btnFillRandom.Text = "Заполнить случайными числами"
+        Me.btnFillRandom.UseVisualStyleBackColor = True
         '
-        'txtMin
+        'txtMax
         '
-        Me.txtMin.Location = New System.Drawing.Point(238, 65)
-        Me.txtMin.Name = "txtMin"
-        Me.txtMin.Size = New System.Drawing.Size(56, 26)
-        Me.txtMin.TabIndex = 1
-        Me.txtMin.Text = "1"
+        Me.txtMax.Location = New System.Drawing.Point(238, 121)
+        Me.txtMax.Name = "txtMax"
+        Me.txtMax.Size = New System.Drawing.Size(56, 26)
+        Me.txtMax.TabIndex = 3
+        Me.txtMax.Text = "100"
         '
         'Label3
         '
@@ -117,31 +129,42 @@ Partial Class Form1
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Верхняя граница"
         '
-        'txtMax
+        'txtMin
         '
-        Me.txtMax.Location = New System.Drawing.Point(238, 121)
-        Me.txtMax.Name = "txtMax"
-        Me.txtMax.Size = New System.Drawing.Size(56, 26)
-        Me.txtMax.TabIndex = 3
-        Me.txtMax.Text = "100"
+        Me.txtMin.Location = New System.Drawing.Point(238, 65)
+        Me.txtMin.Name = "txtMin"
+        Me.txtMin.Size = New System.Drawing.Size(56, 26)
+        Me.txtMin.TabIndex = 1
+        Me.txtMin.Text = "1"
         '
-        'btnFillRandom
+        'Label2
         '
-        Me.btnFillRandom.Location = New System.Drawing.Point(399, 65)
-        Me.btnFillRandom.Name = "btnFillRandom"
-        Me.btnFillRandom.Size = New System.Drawing.Size(180, 89)
-        Me.btnFillRandom.TabIndex = 4
-        Me.btnFillRandom.Text = "Заполнить случайными числами"
-        Me.btnFillRandom.UseVisualStyleBackColor = True
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(87, 68)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(133, 20)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Нижняя граница"
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.RadioButtonLess)
+        Me.Panel3.Controls.Add(Me.RadioButtonGreater)
         Me.Panel3.Controls.Add(Me.btnBinaryInsertionSort)
         Me.Panel3.Controls.Add(Me.btnInsertionSort)
         Me.Panel3.Location = New System.Drawing.Point(482, 495)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(659, 167)
         Me.Panel3.TabIndex = 3
+        '
+        'btnBinaryInsertionSort
+        '
+        Me.btnBinaryInsertionSort.Location = New System.Drawing.Point(236, 51)
+        Me.btnBinaryInsertionSort.Name = "btnBinaryInsertionSort"
+        Me.btnBinaryInsertionSort.Size = New System.Drawing.Size(198, 70)
+        Me.btnBinaryInsertionSort.TabIndex = 1
+        Me.btnBinaryInsertionSort.Text = "Сортировка вставками с бинарным поиском"
+        Me.btnBinaryInsertionSort.UseVisualStyleBackColor = True
         '
         'btnInsertionSort
         '
@@ -152,26 +175,29 @@ Partial Class Form1
         Me.btnInsertionSort.Text = "Сортировка вставками"
         Me.btnInsertionSort.UseVisualStyleBackColor = True
         '
-        'btnBinaryInsertionSort
+        'RadioButtonGreater
         '
-        Me.btnBinaryInsertionSort.Location = New System.Drawing.Point(195, 54)
-        Me.btnBinaryInsertionSort.Name = "btnBinaryInsertionSort"
-        Me.btnBinaryInsertionSort.Size = New System.Drawing.Size(198, 70)
-        Me.btnBinaryInsertionSort.TabIndex = 1
-        Me.btnBinaryInsertionSort.Text = "Сортировка вставками с бинарным поиском"
-        Me.btnBinaryInsertionSort.UseVisualStyleBackColor = True
+        Me.RadioButtonGreater.AutoSize = True
+        Me.RadioButtonGreater.Checked = True
+        Me.RadioButtonGreater.Location = New System.Drawing.Point(30, 30)
+        Me.RadioButtonGreater.Name = "RadioButtonGreater"
+        Me.RadioButtonGreater.Size = New System.Drawing.Size(159, 24)
+        Me.RadioButtonGreater.TabIndex = 2
+        Me.RadioButtonGreater.TabStop = True
+        Me.RadioButtonGreater.Text = "По возрастанию"
+        Me.RadioButtonGreater.UseVisualStyleBackColor = True
         '
-        'Index
+        'RadioButtonLess
         '
-        Me.Index.HeaderText = "Index"
-        Me.Index.Name = "Index"
+        Me.RadioButtonLess.AutoSize = True
+        Me.RadioButtonLess.Location = New System.Drawing.Point(30, 77)
+        Me.RadioButtonLess.Name = "RadioButtonLess"
+        Me.RadioButtonLess.Size = New System.Drawing.Size(134, 24)
+        Me.RadioButtonLess.TabIndex = 3
+        Me.RadioButtonLess.Text = "По убыванию"
+        Me.RadioButtonLess.UseVisualStyleBackColor = True
         '
-        'Item
-        '
-        Me.Item.HeaderText = "Item"
-        Me.Item.Name = "Item"
-        '
-        'Form1
+        'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -180,7 +206,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DataGridView)
-        Me.Name = "Form1"
+        Me.Name = "FormMain"
         Me.Text = "Form1"
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -188,6 +214,7 @@ Partial Class Form1
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -207,4 +234,6 @@ Partial Class Form1
     Friend WithEvents btnInsertionSort As Button
     Friend WithEvents Index As DataGridViewTextBoxColumn
     Friend WithEvents Item As DataGridViewTextBoxColumn
+    Friend WithEvents RadioButtonLess As RadioButton
+    Friend WithEvents RadioButtonGreater As RadioButton
 End Class
