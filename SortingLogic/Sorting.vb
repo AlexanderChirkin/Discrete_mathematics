@@ -40,29 +40,37 @@
         Else
             myOperator = New OperatorCompare(AddressOf Less)
         End If
-        Dim i, j, k, temp As Integer
+        Dim i, mid, k, temp As Integer
         If length > 1 Then
             For i = 1 To length - 1
                 Dim first, last As Integer
                 first = 0
                 last = i - 1
+                If myOperator(array(last), array(i)) Then
+                    GoTo m1
+                End If
+
+
                 While first < last
                     countOfCompare += 1
-                    j = (first + last) / 2
-                    If myOperator(array(j), array(i)) Then
-                        last = j
-                    ElseIf myOperator(array(i), array(j)) Then
-                        first = j
+                    mid = Math.Floor((first + last) / 2)
+                    If myOperator(array(mid), array(i)) Then
+                        'If array(mid) < array(i) Then
+                        mid += 1
+                        first = mid
+                    ElseIf myOperator(array(i), array(mid)) Then
+                        'ElseIf array(i) < array(mid) Then
+                        last = mid
                     Else
-                        Exit While
+                        last = first = mid
                     End If
                 End While
                 temp = array(i)
-                For k = i - 1 To j Step -1
+                For k = i - 1 To mid Step -1
                     array(k + 1) = array(k)
                 Next k
-                array(j) = temp
-            Next i
+                array(mid) = temp
+m1:         Next i
         End If
     End Sub
 
