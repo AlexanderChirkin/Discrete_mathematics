@@ -15,7 +15,7 @@
         Dim i, j, k, temp As Integer
         If length > 1 Then
             For i = 1 To length - 1
-                For j = 0 To i - 1
+                For j = i - 1 To j
                     countOfCompare += 1
                     If myOperator(array(i), array(j)) Then
                         Exit For
@@ -46,20 +46,17 @@
                 Dim first, last As Integer
                 first = 0
                 last = i - 1
+                countOfCompare += 1
                 If myOperator(array(last), array(i)) Then
-                    GoTo m1
+                    Continue For
                 End If
-
-
                 While first < last
                     countOfCompare += 1
                     mid = Math.Floor((first + last) / 2)
                     If myOperator(array(mid), array(i)) Then
-                        'If array(mid) < array(i) Then
                         mid += 1
                         first = mid
                     ElseIf myOperator(array(i), array(mid)) Then
-                        'ElseIf array(i) < array(mid) Then
                         last = mid
                     Else
                         last = first = mid
@@ -70,7 +67,7 @@
                     array(k + 1) = array(k)
                 Next k
                 array(mid) = temp
-m1:         Next i
+            Next i
         End If
     End Sub
 

@@ -30,6 +30,12 @@ Public Class FormMain
         Next
     End Sub
 
+    Private Sub GridToArray()
+        For i = 0 To Array.Length - 1
+            Array.Values(i) = Integer.Parse(DataGridView(1, i).Value)
+        Next
+    End Sub
+
     Private Sub btnFillRandom_Click(sender As Object, e As EventArgs) Handles btnFillRandom.Click
         Dim min, max As Integer
         If Integer.TryParse(txtMax.Text, max) And Integer.TryParse(txtMin.Text, min) And min < max Then
@@ -40,22 +46,25 @@ Public Class FormMain
 
     Private Sub btnInsertionSort_Click(sender As Object, e As EventArgs) Handles btnInsertionSort.Click
         If RadioButtonGreater.Checked Then
-            order = 1
-        Else
             order = -1
+        Else
+            order = 1
         End If
+        GridToArray()
         Sorting.InsertionSort(Array.Values, order, count)
+        TextBoxCountOFCompare.Text = count
         ShowArray()
     End Sub
 
     Private Sub btnBinaryInsertionSort_Click(sender As Object, e As EventArgs) Handles btnBinaryInsertionSort.Click
-
         If RadioButtonGreater.Checked Then
-            order = 1
-        Else
             order = -1
+        Else
+            order = 1
         End If
+        GridToArray()
         Sorting.InsertionSortBinary(Array.Values, order, count)
+        TextBoxCountOFCompare.Text = count
         ShowArray()
     End Sub
 End Class

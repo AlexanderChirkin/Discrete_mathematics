@@ -35,14 +35,18 @@ Partial Class FormMain
         Me.txtMin = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.RadioButtonLess = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonGreater = New System.Windows.Forms.RadioButton()
         Me.btnBinaryInsertionSort = New System.Windows.Forms.Button()
         Me.btnInsertionSort = New System.Windows.Forms.Button()
-        Me.RadioButtonGreater = New System.Windows.Forms.RadioButton()
-        Me.RadioButtonLess = New System.Windows.Forms.RadioButton()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBoxCountOFCompare = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView
@@ -69,9 +73,9 @@ Partial Class FormMain
         '
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.txtNumberOfItem)
-        Me.Panel1.Location = New System.Drawing.Point(486, 83)
+        Me.Panel1.Location = New System.Drawing.Point(545, 94)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(655, 104)
+        Me.Panel1.Size = New System.Drawing.Size(655, 87)
         Me.Panel1.TabIndex = 1
         '
         'Label1
@@ -98,14 +102,14 @@ Partial Class FormMain
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.txtMin)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(480, 215)
+        Me.Panel2.Location = New System.Drawing.Point(542, 205)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(661, 205)
         Me.Panel2.TabIndex = 2
         '
         'btnFillRandom
         '
-        Me.btnFillRandom.Location = New System.Drawing.Point(399, 65)
+        Me.btnFillRandom.Location = New System.Drawing.Point(373, 65)
         Me.btnFillRandom.Name = "btnFillRandom"
         Me.btnFillRandom.Size = New System.Drawing.Size(180, 89)
         Me.btnFillRandom.TabIndex = 4
@@ -152,34 +156,26 @@ Partial Class FormMain
         Me.Panel3.Controls.Add(Me.RadioButtonGreater)
         Me.Panel3.Controls.Add(Me.btnBinaryInsertionSort)
         Me.Panel3.Controls.Add(Me.btnInsertionSort)
-        Me.Panel3.Location = New System.Drawing.Point(482, 495)
+        Me.Panel3.Location = New System.Drawing.Point(544, 425)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(659, 167)
         Me.Panel3.TabIndex = 3
         '
-        'btnBinaryInsertionSort
+        'RadioButtonLess
         '
-        Me.btnBinaryInsertionSort.Location = New System.Drawing.Point(236, 51)
-        Me.btnBinaryInsertionSort.Name = "btnBinaryInsertionSort"
-        Me.btnBinaryInsertionSort.Size = New System.Drawing.Size(198, 70)
-        Me.btnBinaryInsertionSort.TabIndex = 1
-        Me.btnBinaryInsertionSort.Text = "Сортировка вставками с бинарным поиском"
-        Me.btnBinaryInsertionSort.UseVisualStyleBackColor = True
-        '
-        'btnInsertionSort
-        '
-        Me.btnInsertionSort.Location = New System.Drawing.Point(467, 58)
-        Me.btnInsertionSort.Name = "btnInsertionSort"
-        Me.btnInsertionSort.Size = New System.Drawing.Size(126, 63)
-        Me.btnInsertionSort.TabIndex = 0
-        Me.btnInsertionSort.Text = "Сортировка вставками"
-        Me.btnInsertionSort.UseVisualStyleBackColor = True
+        Me.RadioButtonLess.AutoSize = True
+        Me.RadioButtonLess.Location = New System.Drawing.Point(30, 90)
+        Me.RadioButtonLess.Name = "RadioButtonLess"
+        Me.RadioButtonLess.Size = New System.Drawing.Size(134, 24)
+        Me.RadioButtonLess.TabIndex = 3
+        Me.RadioButtonLess.Text = "По убыванию"
+        Me.RadioButtonLess.UseVisualStyleBackColor = True
         '
         'RadioButtonGreater
         '
         Me.RadioButtonGreater.AutoSize = True
         Me.RadioButtonGreater.Checked = True
-        Me.RadioButtonGreater.Location = New System.Drawing.Point(30, 30)
+        Me.RadioButtonGreater.Location = New System.Drawing.Point(30, 51)
         Me.RadioButtonGreater.Name = "RadioButtonGreater"
         Me.RadioButtonGreater.Size = New System.Drawing.Size(159, 24)
         Me.RadioButtonGreater.TabIndex = 2
@@ -187,21 +183,55 @@ Partial Class FormMain
         Me.RadioButtonGreater.Text = "По возрастанию"
         Me.RadioButtonGreater.UseVisualStyleBackColor = True
         '
-        'RadioButtonLess
+        'btnBinaryInsertionSort
         '
-        Me.RadioButtonLess.AutoSize = True
-        Me.RadioButtonLess.Location = New System.Drawing.Point(30, 77)
-        Me.RadioButtonLess.Name = "RadioButtonLess"
-        Me.RadioButtonLess.Size = New System.Drawing.Size(134, 24)
-        Me.RadioButtonLess.TabIndex = 3
-        Me.RadioButtonLess.Text = "По убыванию"
-        Me.RadioButtonLess.UseVisualStyleBackColor = True
+        Me.btnBinaryInsertionSort.Location = New System.Drawing.Point(236, 51)
+        Me.btnBinaryInsertionSort.Name = "btnBinaryInsertionSort"
+        Me.btnBinaryInsertionSort.Size = New System.Drawing.Size(198, 89)
+        Me.btnBinaryInsertionSort.TabIndex = 1
+        Me.btnBinaryInsertionSort.Text = "Сортировка вставками с бинарным поиском"
+        Me.btnBinaryInsertionSort.UseVisualStyleBackColor = True
+        '
+        'btnInsertionSort
+        '
+        Me.btnInsertionSort.Location = New System.Drawing.Point(464, 51)
+        Me.btnInsertionSort.Name = "btnInsertionSort"
+        Me.btnInsertionSort.Size = New System.Drawing.Size(126, 89)
+        Me.btnInsertionSort.TabIndex = 0
+        Me.btnInsertionSort.Text = "Сортировка вставками"
+        Me.btnInsertionSort.UseVisualStyleBackColor = True
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.TextBoxCountOFCompare)
+        Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Location = New System.Drawing.Point(542, 611)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(661, 117)
+        Me.Panel4.TabIndex = 4
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(39, 40)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(184, 20)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Количество сравнений"
+        '
+        'TextBoxCountOFCompare
+        '
+        Me.TextBoxCountOFCompare.Location = New System.Drawing.Point(232, 37)
+        Me.TextBoxCountOFCompare.Name = "TextBoxCountOFCompare"
+        Me.TextBoxCountOFCompare.Size = New System.Drawing.Size(77, 26)
+        Me.TextBoxCountOFCompare.TabIndex = 1
         '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1758, 806)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -215,6 +245,8 @@ Partial Class FormMain
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -236,4 +268,7 @@ Partial Class FormMain
     Friend WithEvents Item As DataGridViewTextBoxColumn
     Friend WithEvents RadioButtonLess As RadioButton
     Friend WithEvents RadioButtonGreater As RadioButton
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents TextBoxCountOFCompare As TextBox
+    Friend WithEvents Label4 As Label
 End Class
